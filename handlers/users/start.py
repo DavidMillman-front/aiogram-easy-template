@@ -1,9 +1,8 @@
-from aiogram import types
-from aiogram.dispatcher.filters.builtin import CommandStart
+from aiogram.types import Message
+from aiogram.filters import CommandStart
+from aiogram.utils.markdown import hbold
 
-from loader import dp
 
-
-@dp.message_handler(CommandStart())
-async def bot_start(message: types.Message):
-    await message.answer(f"Salom, {message.from_user.full_name}!")
+@dp.message(CommandStart())
+async def command_start_handler(message: Message) -> None:
+    await message.answer(f"Hello, {hbold(message.from_user.full_name)}!")

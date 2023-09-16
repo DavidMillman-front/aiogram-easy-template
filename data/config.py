@@ -1,10 +1,5 @@
-from environs import Env
+# Bot Token
+TOKEN = ''
 
-# environs kutubxonasidan foydalanish
-env = Env()
-env.read_env()
-
-# .env fayl ichidan quyidagilarni o'qiymiz
-BOT_TOKEN = env.str("BOT_TOKEN")  # Bot toekn
-ADMINS = env.list("ADMINS")  # adminlar ro'yxati
-IP = env.str("ip")  # Xosting ip manzili
+# Admins as array. the ids should be string, not integer
+ADMINS = ['']
